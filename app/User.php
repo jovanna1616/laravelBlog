@@ -14,6 +14,8 @@ class User extends Authenticatable
      *
      * @var array
      */
+
+    // za sve kolone u bazi koje zelimo da menjamo moramo ovde navesti inace im ne mozemo pristupiti
     protected $fillable = [
         'name', 'email', 'password',
     ];

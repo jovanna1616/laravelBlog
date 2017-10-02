@@ -6,7 +6,7 @@
 
     <hr>
 
-    <form method="POST" action="/posts">
+    <form method="POST" action="/registration">
 
         {{ csrf_field() }}
 

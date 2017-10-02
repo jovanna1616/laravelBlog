@@ -7,5 +7,8 @@
             <a class="nav-link" href="#">New hires</a>
             <a class="nav-link" href="#">About</a>
         </nav>
+        @if($user)
+            <div class="pull-right">{{ $user->name }}</div>
+       @endif
     </div>
 </div>

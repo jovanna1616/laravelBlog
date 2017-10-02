@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Auth;
+
 use App\Post;
 
 class PostsController extends Controller
@@ -11,7 +13,13 @@ class PostsController extends Controller
     {
         $posts = Post::all();
 
-        return view('posts.index', ['posts' => $posts]);
+
+        // Get the currently authenticated user...
+        $user = Auth::user();
+        // Get the currently authenticated user's ID...
+        // $id = Auth::id();
+
+        return view('posts.index', compact('posts', 'user'));
     }
 
     public function show($id)
