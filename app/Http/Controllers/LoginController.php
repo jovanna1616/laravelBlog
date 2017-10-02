@@ -23,9 +23,17 @@ class LoginController extends Controller
 
 
 
-    	$user = User::where('email', $request->get('email'))->get();
+    	$user = User::where('email', $request->get('email'));
+
+    	if($user->email == $request->get('email')) {
+
+			if($user->password == $request->get('password')) {
+
+	    		return redirect('/posts');
+
+			}
     	
-    	return redirect('/posts');
+    	}
 
     }
 
