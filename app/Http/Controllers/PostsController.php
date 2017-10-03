@@ -11,7 +11,7 @@ class PostsController extends Controller
 
     public function index()
     {
-        $posts = Post::all();
+        $posts = Post::latest()->get();
 
 
         // Get the currently authenticated user...
